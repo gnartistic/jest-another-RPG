@@ -1,8 +1,11 @@
-const Potion = require('../lib/Potion');
+const Potion = require('../lib/Potion.js');
 
-jest.mock('../lib/Potion');
+test('creates a health potion object', () => {
+    const potion = new Potion('health');
 
-console.log(new Potion());
+    expect(potion.name).toBe('health');
+    expect(potion.value).toEqual(expect.any(Number));
+});
 
 test('creates a random potion object', () => {
     const potion = new Potion();
